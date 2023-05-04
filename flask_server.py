@@ -2,6 +2,9 @@
 
 See https://flask.palletsprojects.com/en/2.2.x/quickstart/
 
+Prerequisite: Make sure the fastapi package is installed. If not, use the command:
+    pip install fastapi
+
 To start the server, use the command:
     flask --app flask_server run
 

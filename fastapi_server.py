@@ -2,14 +2,17 @@
 
 This is a simple web server using code from https://fastapi.tiangolo.com/#create-it
 
+Prerequisite: Make sure the fastapi package is installed. If not, use the command:
+    pip install fastapi
+
 To run it, use the command:
-uvicorn fastapi_server:app --reload
+    uvicorn fastapi_server:app --reload
 
 You can test it from the same machine using the loopback IP address 127.0.0.1 and port 8000
 So from a browser, try these URLs:
-http://127.0.0.1:8000    - should return a JSON dictionary hello world
-http://127.0.0.1:8000/html - should return a simple HTML page
-http://127.0.0.1:8000/rand/10/20 - should return a random integer between 10 and 20
+    http://127.0.0.1:8000    - should return a JSON dictionary hello world
+    http://127.0.0.1:8000/html - should return a simple HTML page
+    http://127.0.0.1:8000/rand/10/20 - should return a random integer between 10 and 20
 """
 
 from random import randint
