@@ -9,7 +9,7 @@ You can test it from the same machine using the loopback IP address 127.0.0.1 an
 So from a browser, try these URLs:
 http://127.0.0.1:8000    - should return a JSON dictionary hello world
 http://127.0.0.1:8000/html - should return a simple HTML page
-http://127.0.0.1:8000/randint/10/20 - should return a random integer between 10 and 20
+http://127.0.0.1:8000/rand/10/20 - should return a random integer between 10 and 20
 """
 
 from random import randint
@@ -30,9 +30,7 @@ def read_html():
     html_text = "<html><body><h1>An HTML header</h1><p>And a paragraph</p></body></html>"
     return HTMLResponse(content=html_text, status_code=200)
 
-# Respond to the randint URL requests with min and max values with a random int
-# http://server/randint/{min_val}/{max_val}
+# Respond to http://server/randint/{min}/{max} with a random int in that range 
 @app.get("/rand/{min}/{max}")
 def read_rand(min : int, max : int):
-    #return str(randint(min, max))
     return randint(min, max)
