@@ -1,4 +1,4 @@
-"""flask_server.py - a simple web server using Flask
+"""flask_server.py - a simple Flask web server 
 
 See https://flask.palletsprojects.com/en/2.2.x/quickstart/
 
@@ -12,6 +12,8 @@ You can test it from the same machine in a browser using the loopback IP address
 and port (5000). So from a browser, try these URLs:
     http://127.0.0.1:5000               - returns a simple HTML page
     http://127.0.0.1:5000/rand/10/20    - returns a random integer between 10 and 20
+
+If hosting on replit (which doesn't have a local browser), run main.py instead.
 """
 
 from flask import Flask, request
@@ -20,11 +22,19 @@ from random import randint
 app = Flask(__name__)
 
 # An example of a simple response
+# Called from http://127.0.0.1:5000
 @app.route("/")
 def get_root():
-    return "<h1>An important message</h1><p>Hello, World!</p>"
+    return {"Hello": "World"}
 
-# An example of a response that takes parameters in the path
+# A simple response from a different path that returns HTML
+# Called from http://127.0.0.1:5000/html
+@app.route("/html")
+def get_html():
+    return "<html><body><h1>An HTML header</h1><p>And a paragraph</p></body></html>"
+
+# A response to a request that takes user-defined input in the path
+# Called from http://127.0.0.1:5000/rand/<min_value>/<max_value>
 @app.route("/rand/<int:min>/<int:max>")
 def get_rand(min, max):
     return str(randint(min, max))
