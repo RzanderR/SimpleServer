@@ -10,7 +10,8 @@ To start the server, use the command:
 
 You can test it from the same machine in a browser using the loopback IP address (127.0.0.1)
 and port (5000). So from a browser, try these URLs:
-    http://127.0.0.1:5000               - returns a simple HTML page
+    http://127.0.0.1:5000               - returns a simple JSON dictionary
+    http://127.0.0.1:5000/html          - returns a simple HTML page
     http://127.0.0.1:5000/rand/10/20    - returns a random integer between 10 and 20
 
 If hosting on replit (which doesn't have a local browser), run main.py instead.
@@ -21,7 +22,7 @@ from random import randint
 
 app = Flask(__name__)
 
-# An example of a simple response
+# An example of a simple web API returning JSON data (a Python dictionary)
 # Called from http://127.0.0.1:5000
 @app.route("/")
 def get_root():

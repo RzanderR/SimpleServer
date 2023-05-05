@@ -1,14 +1,11 @@
-Simple python web servers implemented using fastAPI and Flask
+Simple python web servers implemented using Flask
 
-Prereqs: fastAPI or flask
+Prereqs: flask
+On replit, you can just run the program and it will install flask (the program will fail when run since you didn't do the steps below, but it will at least install flask).
+Or alternatively pip install or conda install.
 
-For details on how to run each server, see the corresponding python file
-
-To try flask:
+To try it:
 1. Start the server: from terminal, run: flask --app flask_server run
 2. Run the client: main.py (make sure PORT=5000)
 
-To try flask:
-1. Start the server: from terminal, run: uvicorn fastapi_server:app --reload
-2. Run the client: main.py (make sure PORT=8000)
-
+Look in flask_server.py for more information
